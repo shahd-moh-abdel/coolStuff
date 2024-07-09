@@ -3,17 +3,13 @@ const ctx = canvas.getContext('2d');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-canvas.style.width = '100vw';
-canvas.style.height = '100vh';
+
 
 function resizeCanvas() {
-    const dpr = window.devicePixelRatio || 1;
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * dpr;
-    canvas.height = rect.height * dpr;
-    ctx.scale(dpr, dpr);
-    canvas.style.width = '100vw';
-    canvas.style.height = '100vh';
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.width = window.innerWidth;
+    canvas.style.height = window.innerHeight;
 }
 
 window.addEventListener('resize', resizeCanvas);
